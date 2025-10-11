@@ -11,7 +11,7 @@ from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchD
 def generate_launch_description():
     cartographer_dir = get_package_share_directory('omorobot_cartographer')
 
-    configuration_basename = LaunchConfiguration('configuration_basename', default='omorobot.lua')
+    configuration_basename = LaunchConfiguration('configuration_basename', default='cartographer.lua')
     configuration_directory = LaunchConfiguration('configuration_directory', default=os.path.join(cartographer_dir, 'config'))
     publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
     resolution = LaunchConfiguration('resolution', default='0.05')
