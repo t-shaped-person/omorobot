@@ -8,12 +8,10 @@ from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
 
-ROBOT_MODEL = os.getenv('ROBOT_MODEL', 'R2MINI')
-
 def generate_launch_description():
     cartographer_dir = get_package_share_directory('omorobot_cartographer')
 
-    configuration_basename = LaunchConfiguration('configuration_basename', default=ROBOT_MODEL+'.lua')
+    configuration_basename = LaunchConfiguration('configuration_basename', default='omorobot.lua')
     configuration_directory = LaunchConfiguration('configuration_directory', default=os.path.join(cartographer_dir, 'config'))
     publish_period_sec = LaunchConfiguration('publish_period_sec', default='1.0')
     resolution = LaunchConfiguration('resolution', default='0.05')

@@ -10,9 +10,9 @@ options = {
   odom_frame = "odom",
   provide_odom_frame = false,
   publish_frame_projected_to_2d = true,
-  use_odometry = true,                                                  -- odometry(encoder...) improve cartographer's localization(options), 'odom' topic
-  use_nav_sat = false,                                                  -- GPS improve global SLAM, 'fix' topic
-  use_landmarks = false,                                                -- landmarks, 'landmark' topic
+  use_odometry = true,
+  use_nav_sat = false,
+  use_landmarks = false,
   num_laser_scans = 1,
   num_multi_echo_laser_scans = 0,
   num_subdivisions_per_laser_scan = 1,
@@ -30,8 +30,8 @@ options = {
 
 MAP_BUILDER.use_trajectory_builder_2d = true
 
-TRAJECTORY_BUILDER_2D.min_range = 0.03 -- tminipro                      -- lidar bandpass filter min
-TRAJECTORY_BUILDER_2D.max_range = 12.0 -- tminipro                      -- lidar bandpass filter max
+TRAJECTORY_BUILDER_2D.min_range = 0.03
+TRAJECTORY_BUILDER_2D.max_range = 5.0
 TRAJECTORY_BUILDER_2D.missing_data_ray_length = 3.
 TRAJECTORY_BUILDER_2D.use_imu_data = false
 TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
