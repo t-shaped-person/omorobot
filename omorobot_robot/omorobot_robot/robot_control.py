@@ -104,11 +104,13 @@ class RobotControl(Node):
     def update_odometry(self, time_now, dt):
         self.delta_lh, self.delta_rh = self.enc_lh - self.enc_lh_pre, self.enc_rh - self.enc_rh_pre
         self.enc_lh_pre, self.enc_rh_pre = self.enc_lh, self.enc_rh
-        delta_s = (self.delta_lh + self.delta_rh) / 2.0 * self.distance_per_pulse
-        delta_theta = (self.delta_rh - self.delta_lh) / self.wheel_separation * self.distance_per_pulse
+        dist_lh, dist_rh = self.delta_lh * self.distance_per_pulse, self.delta_rh * self.distance_per_pulse
+        delta_s = (dist_lh + dist_rh) / 2.0
+        delta_theta = (dist_rh - dist_lh) / self.wheel_separation
         self.x += delta_s * math.cos(self.theta + (delta_theta / 2.0))
         self.y += delta_s * math.sin(self.theta + (delta_theta / 2.0))
         self.theta += delta_theta
+        self.theta = (self.theta + math.pi) % (2 * math.pi) - math.pi
         self.lin_vel = delta_s / dt
         self.ang_vel = delta_theta / dt
         odometry = Odometry()
