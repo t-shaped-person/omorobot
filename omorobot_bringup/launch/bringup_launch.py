@@ -19,7 +19,10 @@ def generate_launch_description():
     description_dir = get_package_share_directory('omorobot_description')
     robot_dir = get_package_share_directory('omorobot_robot')
 
-    lidar_yaml = LaunchConfiguration('lidar_yaml', default=os.path.join(bringup_dir, 'param', LIDAR_MODEL+'.yaml'))
+    if ROBOT_MODEL == 'R2MINI' or ROBOT_MODEL == 'DONKEYBOTI':
+        lidar_yaml = LaunchConfiguration('lidar_yaml', default=os.path.join(bringup_dir, 'param', LIDAR_MODEL+'_'+ROBOT_MODEL+'.yaml'))
+    else:
+        lidar_yaml = LaunchConfiguration('lidar_yaml', default=os.path.join(bringup_dir, 'param', LIDAR_MODEL+'.yaml'))
     robot_yaml = LaunchConfiguration('robot_yaml', default=os.path.join(robot_dir, 'param', ROBOT_MODEL+'.yaml'))
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 

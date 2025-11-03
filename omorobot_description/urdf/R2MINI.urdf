@@ -30,7 +30,7 @@
     </material>
 
     <material name="brown">
-        <color rgba="0.8706 0.8118 0.7647 1.0"/>
+        <color rgba="0.588 0.294 0.0 1.0"/>
     </material>
 
     <material name="red">
@@ -48,30 +48,29 @@
     <link name="base_footprint"/>
 
     <joint name="base_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.016" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.018" rpy="0.0 0.0 0.0"/>
         <parent link="base_footprint"/>
         <child link="base_link"/>
     </joint>
 
     <link name="base_link">
         <visual>
-            <origin xyz="-0.055 0.0 0.025" rpy="0.0 0.0 0.0"/>
+            <origin xyz="-0.037 0.0 0.065" rpy="0.0 0.0 1.57"/>
             <geometry>
-                <!-- <mesh filename="package://omorobot_description/meshes/bases/R2MINI_BODY.dae" scale="1 1 1"/> -->
-                <box size="0.17 0.14 0.05"/>
+                <mesh filename="package://omorobot_description/meshes/bases/R2MINI_BODY.stl" scale="0.001 0.001 0.001"/>
             </geometry>
-            <material name="red"/>
+            <material name="brown"/>
         </visual>
         <collision>
-            <origin xyz="-0.055 0.0 0.025" rpy="0.0 0.0 0.0"/>
+            <origin xyz="-0.037 0.0 0.06" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.17 0.14 0.05"/>
+                <box size="0.2 0.19 0.16"/>
             </geometry>
         </collision>
     </link>
 
     <joint name="wheel_left_joint" type="continuous">
-        <origin xyz="0.0 0.09 0.02" rpy="-1.57 0.0 0.0"/>
+        <origin xyz="0.0 0.09 0.015" rpy="-1.57 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="wheel_left_link"/>
         <axis xyz="0.0 0.0 1.0"/>
@@ -81,7 +80,7 @@
         <visual>
             <origin xyz="0.034 -0.034 -0.0135" rpy="0.0 -1.57 0.0"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/wheels/R2MINI_WHEEL.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/wheels/R2MINI_WHEEL.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -94,7 +93,7 @@
     </link>
 
     <joint name="wheel_right_joint" type="continuous">
-        <origin xyz="0.0 -0.09 0.02" rpy="-1.57 0.0 0.0"/>
+        <origin xyz="0.0 -0.09 0.015" rpy="-1.57 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="wheel_right_link"/>
         <axis xyz="0.0 0.0 1.0"/>
@@ -104,7 +103,7 @@
         <visual>
             <origin xyz="-0.034 -0.034 0.0135" rpy="0.0 1.57 0.0"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/wheels/R2MINI_WHEEL.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/wheels/R2MINI_WHEEL.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -116,16 +115,16 @@
         </collision>
     </link>
 
-    <joint name="imu_joint" type="fixed">
+    <!-- <joint name="imu_joint" type="fixed">
         <origin xyz="-0.02 0.02 0.05" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="imu_link"/>
     </joint>
 
-    <link name="imu_link"/>
+    <link name="imu_link"/> -->
 
     <joint name="scan_joint" type="fixed">
-        <origin xyz="0.01 0.0 0.149" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0155 0.0 0.064" rpy="3.14 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="base_scan"/>
         <axis xyz="0.0 0.0 0.0"/>
@@ -135,15 +134,14 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <!-- <mesh filename="package://omorobot_description/meshes/sensors/R2MINI_X4.dae" scale="1 1 1"/> -->
-                <cylinder radius="0.018" length="0.014"/>
+                <cylinder radius="0.019" length="0.012"/>
             </geometry>
             <material name="green"/>
         </visual>
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <cylinder radius="0.018" length="0.014"/>
+                <cylinder radius="0.019" length="0.012"/>
             </geometry>
         </collision>
     </link>

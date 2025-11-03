@@ -57,7 +57,7 @@
         <visual>
             <origin xyz="0.942 0.326 -0.1005" rpy="1.57 0.0 -1.57"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/bases/DONKEYBOTI_BODY.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/bases/DONKEYBOTI_BODY.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="yellow"/>
         </visual>
@@ -74,7 +74,7 @@
         <visual>
             <origin xyz="-0.1005 -0.1005 0.0275" rpy="0.0 1.57 0.0"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/wheels/DONKEYBOTI_WHEEL.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/wheels/DONKEYBOTI_WHEEL.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -91,7 +91,7 @@
         <visual>
             <origin xyz="-0.1005 -0.1005 0.0275" rpy="0.0 1.57 0.0"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/wheels/DONKEYBOTI_WHEEL.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/wheels/DONKEYBOTI_WHEEL.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -117,7 +117,7 @@
         <visual>
             <origin xyz="0.02 -0.02 0.0" rpy="0.0 0.0 1.57"/>
             <geometry>
-                <mesh filename="package://omorobot_description/meshes/sensors/TMINIPRO.STL" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://omorobot_description/meshes/sensors/TMINIPRO.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </visual>
