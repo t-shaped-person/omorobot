@@ -169,7 +169,7 @@ local_costmap:
       width: 3
       height: 3
       resolution: 0.05
-      robot_radius: 0.15 # r2mini
+      robot_radius: 0.2 # r2mini
       plugins: ["obstacle_layer", "voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -217,7 +217,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link
       transform_tolerance: 0.5
-      robot_radius: 0.15 # r2mini
+      robot_radius: 0.2 # r2mini
       resolution: 0.05
       track_unknown_space: true
       plugins: ["static_layer", "obstacle_layer", "voxel_layer", "inflation_layer"]
@@ -299,7 +299,7 @@ planner_server:
       max_iterations: 1000000
       max_on_approach_iterations: 1000
       max_planning_time: 2.0
-      cost_travel_multiplier: 2.0
+      cost_travel_multiplier: 4.0
       use_final_approach_orientation: false
       smoother:
         max_iterations: 1000
