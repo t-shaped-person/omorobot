@@ -146,12 +146,12 @@ controller_server:
       short_circuit_trajectory_evaluation: true
       stateful: true
       critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-      BaseObstacle.scale: 0.02
+      BaseObstacle.scale: 0.1 # 0.02
       PathAlign.scale: 32.0
       PathAlign.forward_point_distance: 0.1
       GoalAlign.scale: 24.0
       GoalAlign.forward_point_distance: 0.1
-      PathDist.scale: 32.0
+      PathDist.scale: 20.0 # 32.0
       GoalDist.scale: 24.0
       RotateToGoal.scale: 32.0
       RotateToGoal.slowing_factor: 5.0
@@ -173,8 +173,8 @@ local_costmap:
       plugins: ["obstacle_layer", "voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        inflation_radius: 0.25
-        cost_scaling_factor: 4.0
+        inflation_radius: 0.5
+        cost_scaling_factor: 2.5
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: true
@@ -261,8 +261,8 @@ global_costmap:
         transform_tolerance: 0.1
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        inflation_radius: 0.25
-        cost_scaling_factor: 4.0
+        inflation_radius: 0.5
+        cost_scaling_factor: 2.5
       always_send_full_costmap: true
 
 map_server:
@@ -299,7 +299,7 @@ planner_server:
       max_iterations: 1000000
       max_on_approach_iterations: 1000
       max_planning_time: 2.0
-      cost_travel_multiplier: 5.0
+      cost_travel_multiplier: 10.0
       use_final_approach_orientation: false
       smoother:
         max_iterations: 1000
@@ -361,7 +361,7 @@ collision_monitor:
     polygons: ["PolygonStop", "PolygonSlow", "FootprintApproach"]
     PolygonStop:
       type: "circle"
-      radius: 0.1
+      radius: 0.25 # 0.1
       action_type: "stop"
       min_points: 4
       visualize: true
