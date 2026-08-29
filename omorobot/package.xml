@@ -5,16 +5,18 @@
   <version>0.0.0</version>
   <description>Meta package for omorobot</description>
   <maintainer email="t.shaped.person@gmail.com">Dr.K</maintainer>
-  <license>Apache Licese, Version 2.0</license>
+  <license>Apache-2.0</license>
 
-  <depend>omorobot_bringup</depend>
-  <depend>omorobot_cartographer</depend>
-  <depend>omorobot_description</depend>
-  <depend>omorobot_navigation2</depend>
-  <depend>omorobot_robot</depend>
-  <depend>omorobot_teleop</depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>omorobot_bringup</exec_depend>
+  <exec_depend>omorobot_cartographer</exec_depend>
+  <exec_depend>omorobot_description</exec_depend>
+  <exec_depend>omorobot_navigation2</exec_depend>
+  <exec_depend>omorobot_robot</exec_depend>
+  <exec_depend>omorobot_teleop</exec_depend>
 
   <export>
-    <build_type>ament_python</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
