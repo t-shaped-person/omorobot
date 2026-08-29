@@ -13,7 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')), # add
-        (os.path.join('share', package_name, 'map'), glob('map/*.yaml')), # add
+        (os.path.join('share', package_name, 'map'), glob('map/*')), # add
         (os.path.join('share', package_name, 'param'), glob('param/*.yaml')), # add
         (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')), # add
     ],
