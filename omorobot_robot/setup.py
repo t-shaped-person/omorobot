@@ -12,15 +12,15 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*')), # add
-        (os.path.join('share', package_name, 'param'), glob('param/*')), # add
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')), # add
+        (os.path.join('share', package_name, 'param'), glob('param/*.yaml')), # add
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Dr.K',
     maintainer_email='t.shaped.person@gmail.com',
     description='Launch scripts for robot',
-    license='Apache License, Version 2.0',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

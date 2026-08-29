@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Launch scripts for description</description>
   <maintainer email="t.shaped.person@gmail.com">Dr.K</maintainer>
-  <license>Apache License, Version 2.0</license>
+  <license>Apache-2.0</license>
 
   <depend>robot_state_publisher</depend>
   <depend>rviz2</depend>

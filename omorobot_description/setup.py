@@ -12,19 +12,19 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*')), # add
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')), # add
         (os.path.join('share', package_name, 'meshes/bases'), glob('meshes/bases/*')), # add
         (os.path.join('share', package_name, 'meshes/sensors'), glob('meshes/sensors/*')), # add
         (os.path.join('share', package_name, 'meshes/wheels'), glob('meshes/wheels/*')), # add
-        (os.path.join('share', package_name, 'rviz'), glob('rviz/*')), # add
-        (os.path.join('share', package_name, 'urdf'), glob('urdf/*')), # add
+        (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')), # add
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')), # add
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Dr.K',
     maintainer_email='t.shaped.person@gmail.com',
     description='Launch scripts for description',
-    license='Apache License, Version 2.0',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
