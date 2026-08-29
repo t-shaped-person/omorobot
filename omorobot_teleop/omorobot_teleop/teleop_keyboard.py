@@ -89,23 +89,23 @@ def main(args=None):
         print(msg)
         while True:
             key = node.keyin()
-            if key == 'w' or key.lower() == 'w':
+            if key.lower() == 'w':
                 target_lin_vel = node.constrain(target_lin_vel + STEP_LIN_VEL, -MAX_LIN_VEL, MAX_LIN_VEL)
                 keyin_cnt += 1
                 node.print(f'current velocity > linear {target_lin_vel:.2f},\t angular {target_ang_vel:.2f}')
-            elif key == 'x' or key.lower() == 'x':
+            elif key.lower() == 'x':
                 target_lin_vel = node.constrain(target_lin_vel - STEP_LIN_VEL, -MAX_LIN_VEL, MAX_LIN_VEL)
                 keyin_cnt += 1
                 node.print(f'current velocity > linear {target_lin_vel:.2f},\t angular {target_ang_vel:.2f}')
-            elif key == 'a' or key.lower() == 'a':
+            elif key.lower() == 'a':
                 target_ang_vel = node.constrain(target_ang_vel + STEP_ANG_VEL, -MAX_ANG_VEL, MAX_ANG_VEL)
                 keyin_cnt += 1
                 node.print(f'current velocity > linear {target_lin_vel:.2f},\t angular {target_ang_vel:.2f}')
-            elif key == 'd' or key.lower() == 'd':
+            elif key.lower() == 'd':
                 target_ang_vel = node.constrain(target_ang_vel - STEP_ANG_VEL, -MAX_ANG_VEL, MAX_ANG_VEL)
                 keyin_cnt += 1
                 node.print(f'current velocity > linear {target_lin_vel:.2f},\t angular {target_ang_vel:.2f}')
-            elif key == ' ' or key == 's' or key.lower() == 's':
+            elif key == ' ' or key.lower() == 's':
                 target_lin_vel, target_ang_vel, current_lin_vel, current_ang_vel = 0.0, 0.0, 0.0, 0.0
                 keyin_cnt += 1
                 node.print(f'current velocity > linear {target_lin_vel:.2f},\t angular {target_ang_vel:.2f}')
