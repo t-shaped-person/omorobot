@@ -6,7 +6,7 @@ robot_control:
 
     wheel:
       separation: 0.6
-      radius: 0.1
+      radius: 0.105
 
     motor:
       gear_ratio: 25.0
